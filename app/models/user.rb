@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	validates :profile_name, uniqueness: true, 
                            presence: true,
                            format: { 
-                              with: /a-zA-Z0-9_-/,
+                              with: /\A[a-zA-Z0-9_-]+\Z/,
                               message: 'Must be formatted correctly.'}
   has_many :statuses
   # Include default devise modules. Others available are:
