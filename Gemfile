@@ -16,3 +16,6 @@ group :development, :test do
 	gem 'sqlite3'	
 end
 
+group :production, :staging do
+	gem 'pg'
+end
