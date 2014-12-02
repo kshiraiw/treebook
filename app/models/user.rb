@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
                               with: /\A[a-zA-Z0-9_-]+\Z/,
                               message: 'Must be formatted correctly.'}
   has_many :statuses
+  has_many :user_friendships
+  has_many :friends, through: :user_friendships
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
